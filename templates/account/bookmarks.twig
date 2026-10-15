@@ -1,0 +1,29 @@
+{% extends 'layout/base.twig' %}
+
+{% block title %}{{ trans('bookmark.title') }} – {{ site_name }}{% endblock %}
+
+{% block content %}
+<h1>{{ trans('bookmark.title') }}</h1>
+
+<h2>{{ trans('bookmark.offers') }}</h2>
+{% if offers is empty %}
+    <p class="empty">{{ trans('bookmark.offers_none') }}</p>
+{% else %}
+    {% include 'offer/_cards.twig' with {offers: offers} only %}
+{% endif %}
+
+<h2>{{ trans('bookmark.providers') }}</h2>
+{% if providers is empty %}
+    <p class="empty">{{ trans('bookmark.providers_none') }}</p>
+{% else %}
+    <ul class="card-list">
+        {% for provider in providers %}
+            <li>
+                <a href="{{ url(provider.path) }}"><strong>{{ provider.name }}</strong></a>
+                <small>{{ trans('core.provider.type.' ~ provider.type) }} · {{ provider.city }}, {{ trans('core.country.' ~ provider.country) }}</small>
+                {% if provider.headline %}<p>{{ provider.headline }}</p>{% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

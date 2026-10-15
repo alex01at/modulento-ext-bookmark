@@ -1,0 +1,12 @@
+{# Included on an offer's public page, see Registrar::offerSection() in Extension.php. Empty data for a visitor who is not logged in. #}
+{% if bookmarked is defined %}
+<form method="post" action="{{ url('/account/bookmarks/toggle') }}" class="bookmark-star">
+    {{ csrf_field() }}
+    <input type="hidden" name="kind" value="{{ kind }}">
+    <input type="hidden" name="id" value="{{ id }}">
+    <input type="hidden" name="return" value="{{ current_path() }}">
+    <button type="submit" aria-pressed="{{ bookmarked ? 'true' : 'false' }}">
+        {{ bookmarked ? trans('bookmark.star.remove') : trans('bookmark.star.add') }}
+    </button>
+</form>
+{% endif %}
