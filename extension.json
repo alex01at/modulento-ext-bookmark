@@ -1,8 +1,9 @@
 {
     "id": "bookmark",
     "name": "Bookmark",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "api": 1,
     "type": "addon",
+    "description": "Lets a logged-in account bookmark an offer or a provider and find them again under \"My bookmarks\".",
     "namespace": "Modulento\\Bookmark"
 }
