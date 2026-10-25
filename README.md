@@ -23,3 +23,7 @@ installation, then enable it under Administration → Extensions.
 ```
 MODULENTO_CORE=/path/to/modulento php tests/run.php
 ```
+
+## Licence
+
+Dies ist ein kommerzielles Produkt, lizenziert je Installation unter dem Endnutzer-Lizenzvertrag in `LICENSE` - nicht GPL (der Modulento-Kern selbst bleibt GPL-3.0-or-later; diese Erweiterung ist ein eigenständiges, proprietäres Werk).
